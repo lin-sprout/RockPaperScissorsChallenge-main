@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var winnerOfCombatLabel: UILabel!
     
+    
+    var fight = ["rock", "rpaper", "rscissors"]
         
     override func viewDidLoad()
     {
@@ -36,13 +38,21 @@ class ViewController: UIViewController {
 
     @IBAction func chooseRockFighterButton(_ sender: Any)
     {
+      
+        chosenFighterImage.image = UIImage(named:"rock")
+        
     }
     
     @IBAction func choosePaperFighterButton(_ sender: Any)
     {
+        chosenFighterImage.image = UIImage(named:"rpaper")
     }
     
-    @IBAction func chooseScissorsFighterButton(_ sender: Any) {
+    @IBAction func chooseScissorsFighterButton(_ sender: Any)
+    {
+        
+        chosenFighterImage.image = UIImage(named:"rscissors")
+        
     }
 }
 
