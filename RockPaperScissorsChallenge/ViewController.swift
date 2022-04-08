@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     
     
     var fight = ["rock", "rpaper", "rscissors"]
+    
+    var counter: Int = 0
+    
+    var randomNumber = Int.random(in: 0...2)
+    
         
     override func viewDidLoad()
     {
@@ -41,7 +46,21 @@ class ViewController: UIViewController {
       
         chosenFighterImage.image = UIImage(named:"rock")
         
+        //aiImage.image = fight(randomNumber)
+        
+        
+        
+        //counter += 1
+            //if counter == 3
+            //{
+              //  counter = resetCounter()
+                
+                
+                //currentLetter = letters[counter]
+                //currentLetterLabel.text = currentLetter
+        
     }
+    
     
     @IBAction func choosePaperFighterButton(_ sender: Any)
     {
