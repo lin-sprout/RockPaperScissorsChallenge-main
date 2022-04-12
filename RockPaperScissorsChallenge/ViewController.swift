@@ -27,10 +27,16 @@ class ViewController: UIViewController {
     
     var fight = ["rock", "rpaper", "rscissors"]
     
+    var fighters = ["rokc", "paper", "scissors"]
+    
     var counter: Int = 0
     
     var randomNumber = Int.random(in: 0...2)
+
+    var currentFighter = "rock"
     
+    var nochosenFighter: Int = 400
+        
     
     //let randO = fight[randomNumber]
     
@@ -50,16 +56,21 @@ class ViewController: UIViewController {
     @IBAction func tapTapTapTap(_ sender: Any)
     {
         let selectedPoint = ((sender as! AnyObject).location(in:horzStackLike5))
+        
         // currentLetter = letters[counter]
+        
         //currentLetterLabel.text = currentLetter
-        //for label in wordLabels
-        //{
-           // if
-             //   label.frame.contains(selectedPoint)
-            //{
-              //  label.text = "\(currentLetter)"
-            //}
-        //}
+        
+        
+       // for label in fight
+      //  {
+          //  if
+           //     label.frame.contains(selectedPoint)
+          //  {
+          //      label.image = "\(currentFighter)"
+                
+          //  }
+       // }
         
    // counter += 1
      //   if counter == 26
@@ -85,8 +96,13 @@ class ViewController: UIViewController {
         
         //aiImage.image = fight(randomNumber)
         aiImage.image = UIImage(named:fight[randomNumber])
+
+        randomNumber = Int.random(in: 0...2)
         
-        
+//        if aiImage == UIImage(named: "rock")
+//        {
+//            winnerOfCombatLabel.text = "You Have Tied"
+//        }
         
         //counter += 1
             //if counter == 3
@@ -99,23 +115,30 @@ class ViewController: UIViewController {
         
     }
     
-    func resetCounter() -> Int
-      {
-          return 0
-      }
+    //func resetCounter() -> Int
+      //{
+          //return 0
+      //}
     
     @IBAction func choosePaperFighterButton(_ sender: Any)
     {
         chosenFighterImage.image = UIImage(named:"rpaper")
         
+        randomNumber = Int.random(in: 0...2)
+        
         aiImage.image = UIImage(named:fight[randomNumber])
     
-        counter += 1
-            if counter == 3
-            {
-                counter = resetCounter()
+//        if aiImage == UIImage(named: "rock")
+//        {
+//            winnerOfCombatLabel.text = "You Have Won"
+//        }
+//
+       // counter += 1
+           // if counter == 3
+            //{
+             //   counter = resetCounter()
                 
-            }
+            //}
     }
     
     @IBAction func chooseScissorsFighterButton(_ sender: Any)
@@ -123,7 +146,32 @@ class ViewController: UIViewController {
         
         chosenFighterImage.image = UIImage(named:"rscissors")
         
+        randomNumber = Int.random(in: 0...2)
+        
         aiImage.image = UIImage(named:fight[randomNumber])
+        //user choice for rock = 0
+        //user choice for paper = 1
+        //user choice for scissors = 2
+        //for next week 4/12
+        
+//        if aiImage == UIImage(named: "rock")
+//        {
+//            winnerOfCombatLabel.text = "You Have Lost"
+//        }
+        
+        //counter += 1
+            //if counter == 3
+            //{
+                //counter = resetCounter()
+            //}
+        
+    }
+    
+    func gloriousVictor ()
+    {
+        //aiImage.image =
+        
+        //
         
     }
 }
