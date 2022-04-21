@@ -98,10 +98,11 @@ class ViewController: UIViewController {
         chosenFighterImage.image = UIImage(named:"rock")
         
         //aiImage.image = fight(randomNumber)
-        aiImage.image = UIImage(named:fight[randomNumber])
-
+      
         randomNumber = Int.random(in: 0...2)
         
+        aiImage.image = UIImage(named:fight[randomNumber])
+
         aiImage.isHidden = false
         
         chosenFighterImage.isHidden = false
@@ -213,6 +214,12 @@ class ViewController: UIViewController {
         aiImage.isHidden = true
         
         chosenFighterImage.isHidden = true
+        
+        randomNumber = 4
+        nochosenFighter = 4
+        
+        winnerOfCombatLabel.text = "Result:"
+        
     }
     
 }
