@@ -36,6 +36,9 @@ class ViewController: UIViewController {
     var currentFighter = "rock"
     
     var nochosenFighter: Int = 400
+    
+    var fightA: String = ""
+    var fightB: String = ""
         
     
     //let randO = fight[randomNumber]
@@ -99,26 +102,20 @@ class ViewController: UIViewController {
 
         randomNumber = Int.random(in: 0...2)
         
+        aiImage.isHidden = false
+        
+        chosenFighterImage.isHidden = false
+        
+        nochosenFighter = 0
+        
+        
 //        if aiImage == UIImage(named: "rock")
 //        {
 //            winnerOfCombatLabel.text = "You Have Tied"
 //        }
-        
-        //counter += 1
-            //if counter == 3
-            //{
-              //  counter = resetCounter()
-                
-                
-                //currentLetter = letters[counter]
-                //currentLetterLabel.text = currentLetter
+        gloriousVictor(aiChoice: randomNumber, playersFighter: nochosenFighter)
         
     }
-    
-    //func resetCounter() -> Int
-      //{
-          //return 0
-      //}
     
     @IBAction func choosePaperFighterButton(_ sender: Any)
     {
@@ -127,18 +124,20 @@ class ViewController: UIViewController {
         randomNumber = Int.random(in: 0...2)
         
         aiImage.image = UIImage(named:fight[randomNumber])
+        
+        aiImage.isHidden = false
+        
+        chosenFighterImage.isHidden = false
+        
+        nochosenFighter = 1
     
 //        if aiImage == UIImage(named: "rock")
 //        {
 //            winnerOfCombatLabel.text = "You Have Won"
 //        }
-//
-       // counter += 1
-           // if counter == 3
-            //{
-             //   counter = resetCounter()
-                
-            //}
+
+        gloriousVictor(aiChoice: randomNumber, playersFighter: nochosenFighter)
+        
     }
     
     @IBAction func chooseScissorsFighterButton(_ sender: Any)
@@ -149,30 +148,72 @@ class ViewController: UIViewController {
         randomNumber = Int.random(in: 0...2)
         
         aiImage.image = UIImage(named:fight[randomNumber])
+        
+        aiImage.isHidden = false
+        
+        chosenFighterImage.isHidden = false
+        
+        nochosenFighter = 2
+        
         //user choice for rock = 0
         //user choice for paper = 1
         //user choice for scissors = 2
-        //for next week 4/12
+        
         
 //        if aiImage == UIImage(named: "rock")
 //        {
 //            winnerOfCombatLabel.text = "You Have Lost"
 //        }
         
-        //counter += 1
-            //if counter == 3
-            //{
-                //counter = resetCounter()
-            //}
+        gloriousVictor(aiChoice: randomNumber, playersFighter: nochosenFighter)
         
     }
     
-    func gloriousVictor ()
+    func gloriousVictor (aiChoice: Int, playersFighter: Int)
     {
-        //aiImage.image =
         
-        //
+        
+        
+        if aiChoice == playersFighter
+        {
+            winnerOfCombatLabel.text = "You Have Tied"
+        }
+        else if aiChoice == 0 && playersFighter == 1
+        {
+            winnerOfCombatLabel.text = "You Have Won"
+        }
+        else if aiChoice == 0 && playersFighter == 2
+        {
+            winnerOfCombatLabel.text = "You Have Lost"
+        }
+        else if aiChoice == 1 && playersFighter == 0
+        {
+            winnerOfCombatLabel.text = "You Have Lost"
+        }
+        else if aiChoice == 1 && playersFighter == 2
+        {
+            winnerOfCombatLabel.text = "You Have Won"
+        }
+        else if aiChoice == 2 && playersFighter == 0
+        {
+            winnerOfCombatLabel.text = "You Have Won"
+        }
+        else if aiChoice == 2 && playersFighter == 1
+        {
+            winnerOfCombatLabel.text = "You Have Lost"
+        }
+                    
+        
         
     }
+    
+    
+    @IBAction func resetButton(_ sender: Any)
+    {
+        aiImage.isHidden = true
+        
+        chosenFighterImage.isHidden = true
+    }
+    
 }
 
